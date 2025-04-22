@@ -1,0 +1,57 @@
+body{
+  /* padding: 20px; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #27292C;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+
+h1{
+  /* margin-top:30px ; */
+}
+
+
+/* we can directly take header element but just for practice we are using it with class */
+.header{
+  display: flex;
+  align-items: center;
+  /* whenever we use flex and in element it consist of img it gets stretch to fix this we use align-item center */
+  justify-content: space-between;
+  padding :10px 20px;
+  box-shadow:0px 3px 4px rgba(14, 13, 13, 0.729)
+}
+.nav-list{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-list li{
+  cursor: pointer;
+}
+
+.nav-logo{
+  width: 40px;
+}
+
+.main-content{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+footer{
+  background-color: rgba(14, 13, 13, 0.729);
+  text-align: center;
+  padding: 10px;
+}
