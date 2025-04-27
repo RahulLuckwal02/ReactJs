@@ -1,5 +1,10 @@
+
+import React from 'react'
+
 export default function Main() {
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+    // const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+    //destructing the array 
+    const [ingredients ,setIngredients] = React.useState([])
     
     const ingredientsListItems = ingredients.map(ingredient => (
         <li key={ingredient}> {ingredient} </li>
@@ -9,8 +14,10 @@ export default function Main() {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
-        ingredients.push(newIngredient)
-        console.log(ingredients)
+        // as we are going to use setIngredients to update the state
+        // ingredients.push(newIngredient)
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+        // console.log(newIngredient)// to see what is adding to the array
     }
 
     return(
