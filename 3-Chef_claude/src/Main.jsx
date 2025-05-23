@@ -10,19 +10,14 @@ export default function Main() {
         <li key={ingredient}> {ingredient} </li>
     ))
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient")
-        // as we are going to use setIngredients to update the state
-        // ingredients.push(newIngredient)
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
-        // console.log(newIngredient)// to see what is adding to the array
     }
 
     return(
         <main>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
+            <form action={handleSubmit} className="add-ingredient-form">
                 <input 
                 type="text"
                 placeholder="e.g. oregano"
